@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Join the Rotaract Club of SSPU - A community of young leaders creating positive change through service, leadership, and professional development.">
+    <meta name="theme-color" content="#0f1222">
+    <title>Rotaract Club of SSPU | Leadership, Service, Community</title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Rotaract Club of SSPU">
+    <meta property="og:description" content="Join our community of young leaders creating positive change through service, leadership, and professional development.">
+    <meta property="og:image" content="https://rotaractsspu.org/logo.png">
+    <meta property="og:url" content="https://rotaractsspu.org">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="theme-color" content="#b31217" />
+    <link rel="icon" href="logo.png" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="loading">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <img src="logo.png" alt="RAC Symbiosis Skills and Professional University Logo" class="logo-img" width="80" height="80" />
+        <a href="#top" class="brand" aria-label="Rotaract Club of SSPU home" style="margin-left:1rem;">Rotaract Club of SSPU</a>
+        <nav class="main-nav" aria-label="Primary">
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+          <ul class="nav-list">
+            <li><a href="#about"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+            <li><a href="#events"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Events</a></li>
+            <li><a href="#membership"><i class="fas fa-users" aria-hidden="true"></i> Membership</a></li>
+            <li><a href="#resources"><i class="fas fa-book" aria-hidden="true"></i> Resources</a></li>
+            <li>
+              <button id="member-login-btn" class="btn" type="button" aria-label="Member Login">
+                <i class="fas fa-user" aria-hidden="true"></i> Member Login
+              </button>
+            </li>
+            <li>
+              <button id="bod-login-btn" class="btn bod-login-btn" type="button" aria-label="Board of Directors Login">
+                <i class="fas fa-user-shield" aria-hidden="true"></i> BOD Login
+              </button>
+            </li>
+            <li>
+              <span id="member-display" style="display:none; color: var(--primary); font-weight: 600; padding: 8px 12px;">
+                <i class="fas fa-user" aria-hidden="true"></i> <span id="logged-member"></span>
+              </span>
+            </li>
+            <li>
+              <span id="username-display" style="display:none; color: var(--accent); font-weight: 600; padding: 8px 12px;">
+                <i class="fas fa-user-shield" aria-hidden="true"></i> <span id="logged-username"></span>
+              </span>
+            </li>
+            <li>
+              <button id="logout-btn" class="btn" type="button" style="display:none" aria-label="Logout">
+                <i class="fas fa-right-from-bracket" aria-hidden="true"></i> Logout
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero">
+        <div class="container hero-inner">
+          <img src="logo.png" alt="Rotaract Club of SSPU Logo" class="hero-logo" width="220" height="220" />
+          <h1>Welcome to Rotaract Club of SSPU</h1>
+          <p>Connecting members through activities, growth and community impact.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#membership"><i class="fas fa-user-plus" aria-hidden="true"></i> Join Now</a>
+            <a class="btn" href="#events"><i class="fas fa-calendar" aria-hidden="true"></i> See Events</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="block" data-section="about">
+        <div class="container">
+          <div class="block-header">
+            <h2>About</h2>
+            <p>Learn what we stand for and who we are.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="About subsections">
+            <button class="subtab selected" data-target="mission" role="tab" aria-selected="true">Mission</button>
+            <button class="subtab" data-target="vision" role="tab" aria-selected="false">Vision</button>
+            <button class="subtab" data-target="history" role="tab" aria-selected="false">History</button>
+            <button class="subtab" data-target="leadership" role="tab" aria-selected="false">Leadership</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="mission" role="tabpanel">
+              <h3>Our Mission</h3>
+              <p>To foster collaboration, personal development and service through engaging programs and inclusive community.</p>
+            </article>
+            <article class="subsection" data-subsection="vision" role="tabpanel">
+              <h3>Our Vision</h3>
+              <p>A vibrant club where every member feels empowered to create positive change.</p>
+            </article>
+            <article class="subsection" data-subsection="history" role="tabpanel">
+              <h3>Our History</h3>
+              <p>Founded in 2024, we began with a small team passionate about impact. Today we host activities across campus and beyond.</p>
+            </article>
+            <article class="subsection" data-subsection="leadership" role="tabpanel">
+              <h3>Leadership</h3>
+              <div class="grid cards">
+                <div class="card"><h4>President</h4><p>Leads strategy and operations.</p></div>
+                <div class="card"><h4>Vice President</h4><p>Oversees programs and initiatives.</p></div>
+                <div class="card"><h4>Treasurer</h4><p>Manages budget and finance.</p></div>
+                <div class="card"><h4>Secretary</h4><p>Coordinates communication.</p></div>
+                <div class="card"><h4><i class="fas fa-hand-holding-heart"></i> Community Service Director</h4><p>Leads community outreach and service projects.</p></div>
+                <div class="card"><h4><i class="fas fa-users"></i> Club Service Director</h4><p>Strengthens club engagement and member experience.</p></div>
+                <div class="card"><h4><i class="fas fa-globe"></i> International Service Director</h4><p>Drives global collaboration and cultural exchange.</p></div>
+                <div class="card"><h4><i class="fas fa-user-graduate"></i> Professional Development Director</h4><p>Builds skills through training and mentorship.</p></div>
+                <div class="card"><h4><i class="fas fa-handshake"></i> Rotary–Rotaract Relationship Officer</h4><p>Fosters partnership with Rotary and external networks.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="events" class="block" data-section="events">
+        <div class="container">
+          <div class="block-header">
+            <h2>Events</h2>
+            <p>Stay in the loop with what's happening.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="Events subsections">
+            <button class="subtab selected" data-target="upcoming" role="tab" aria-selected="true">Upcoming</button>
+            <button class="subtab" data-target="past" role="tab" aria-selected="false">Past</button>
+            <button class="subtab" data-target="workshops" role="tab" aria-selected="false">Workshops</button>
+            <button class="subtab" data-target="competitions" role="tab" aria-selected="false">Competitions</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="upcoming" role="tabpanel">
+              <div class="grid cards">
+                <div class="card">
+                  <h4><i class="fas fa-users"></i> CLUB ASSEMBLY</h4>
+                  <p>Kick off the semester. Fri, 7 PM.</p>
+                  <a class="btn small" href="#" role="button"><i class="fas fa-check" aria-hidden="true"></i> RSVP</a>
+                  <button class="btn small add-to-calendar" type="button" data-title="Welcome Meetup" data-start="2025-09-05T19:00:00" data-end="2025-09-05T21:00:00" data-location="Campus Center"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Calendar</button>
+                </div>
+                <div class="card">
+                  <h4><i class="fas fa-leaf"></i> CMD</h4>
+                  <p>Join our local clean-up. Sat, 9 AM.</p>
+                  <a class="btn small" href="#" role="button"><i class="fas fa-check" aria-hidden="true"></i> Sign Up</a>
+                  <button class="btn small add-to-calendar" type="button" data-title="Community Service Day" data-start="2025-09-06T09:00:00" data-end="2025-09-06T12:00:00" data-location="City Park"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Calendar</button>
+                </div>
+                <div class="card">
+                  <h4><i class="fas fa-microphone"></i> SAMYATI 3.0</h4>
+                  <p>Insights from industry leaders. Wed, 6 PM.</p>
+                  <a class="btn small" href="#" role="button"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Get Ticket</a>
+                  <button class="btn small add-to-calendar" type="button" data-title="Guest Speaker" data-start="2025-09-10T18:00:00" data-end="2025-09-10T19:30:00" data-location="Auditorium"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Calendar</button>
+                </div>
+                <div class="card">
+                  <h4><i class="fas fa-glass-cheers"></i> Upcoming</h4>
+                  <p>Relax and network with members. Fri, 8 PM.</p>
+                  <a class="btn small" href="#" role="button"><i class="fas fa-users" aria-hidden="true"></i> Join Us</a>
+                  <button class="btn small add-to-calendar" type="button" data-title="Monthly Social" data-start="2025-09-12T20:00:00" data-end="2025-09-12T22:00:00" data-location="Club Lounge"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Calendar</button>
+                </div>
+              </div>
+            </article>
+            <article class="subsection" data-subsection="past" role="tabpanel">
+              <ul class="list">
+                <li><i class="fas fa-star" aria-hidden="true"></i> Annual Showcase 2024</li>
+                <li><i class="fas fa-chess-king" aria-hidden="true"></i> Leadership Summit</li>
+                <li><i class="fas fa-running" aria-hidden="true"></i> Charity Run</li>
+              </ul>
+            </article>
+            <article class="subsection" data-subsection="workshops" role="tabpanel">
+              <div class="grid cards">
+                <div class="card"><h4><i class="fas fa-comments" aria-hidden="true"></i> Public Speaking</h4><p>Practice sessions and feedback.</p></div>
+                <div class="card"><h4><i class="fas fa-tasks" aria-hidden="true"></i> Project Management</h4><p>Plan, execute, iterate.</p></div>
+                <div class="card"><h4><i class="fas fa-paint-brush" aria-hidden="true"></i> Design Basics</h4><p>Branding and visuals for clubs.</p></div>
+              </div>
+            </article>
+            <article class="subsection" data-subsection="competitions" role="tabpanel">
+              <div class="grid cards">
+                <div class="card"><h4><i class="fas fa-laptop-code" aria-hidden="true"></i> Hackathon</h4><p>48-hour innovation sprint.</p></div>
+                <div class="card"><h4><i class="fas fa-comments" aria-hidden="true"></i> Debate Cup</h4><p>Test your rhetoric.</p></div>
+                <div class="card"><h4><i class="fas fa-briefcase" aria-hidden="true"></i> Case Challenge</h4><p>Solve real-world problems.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="membership" class="block" data-section="membership">
+        <div class="container">
+          <div class="block-header">
+            <h2>Membership</h2>
+            <p>Everything you need to join and get involved.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="Membership subsections">
+            <button class="subtab selected" data-target="join" role="tab" aria-selected="true">Join Us</button>
+            <button class="subtab" data-target="benefits" role="tab" aria-selected="false">Benefits</button>
+            <button class="subtab" data-target="fees" role="tab" aria-selected="false">Fees</button>
+            <button class="subtab" data-target="faq" role="tab" aria-selected="false">FAQ</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="join" role="tabpanel">
+              <form id="membershipForm" class="membership-form" action="https://formspree.io/f/xnneozwy" method="POST">
+                <div class="form-group">
+                  <label for="fullName">Full Name*</label>
+                  <input type="text" id="fullName" name="name" required>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="universityId">University ID*</label>
+                    <input type="text" id="universityId" name="universityId" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="course">Course & Year*</label>
+                    <input type="text" id="course" name="course" placeholder="e.g., B.Tech CSE - 2nd Year" required>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="whyJoin">Why do you want to join Rotaract?*</label>
+                  <textarea id="whyJoin" name="message" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="agree" required> 
+                    I agree to the <a href="#" class="privacy-link">Privacy Policy</a> and consent to being contacted by the Rotaract Club of SSPU.
+                  </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                  <span class="btn-text">Submit Application</span>
+                  <span class="btn-loading">Sending...</span>
+                </button>
+                
+                <div id="formMessage" class="form-message"></div>
+              </form>
+            </article>
+            
+            <article class="subsection" data-subsection="benefits" role="tabpanel">
+              <h3>Benefits of Membership</h3>
+              <ul class="benefits-list">
+                <li>Access to exclusive events and workshops</li>
+                <li>Networking opportunities with professionals</li>
+                <li>Leadership development programs</li>
+                <li>Community service opportunities</li>
+                <li>Skill-building sessions</li>
+              </ul>
+            </article>
+            
+            <article class="subsection" data-subsection="fees" role="tabpanel">
+              <h3>Membership Fees</h3>
+              <div class="pricing-cards">
+                <div class="card">
+                  <h4><i class="fas fa-user" aria-hidden="true"></i> Standard</h4>
+                  <p class="price">₹300 / semester</p>
+                  <p>Basic membership benefits.</p>
+                </div>
+                <div class="card">
+                  <h4><i class="fas fa-star" aria-hidden="true"></i> Plus</h4>
+                  <p class="price">₹500 / semester</p>
+                  <p>Includes merch and workshop discounts.</p>
+                </div>
+                <div class="card">
+                  <h4><i class="fas fa-heart" aria-hidden="true"></i> Supporter</h4>
+                  <p class="price">₹1000 / semester</p>
+                  <p>Support the club and get recognition.</p>
+                </div>
+              </div>
+            </article>
+            <article class="subsection" data-subsection="faq" role="tabpanel">
+              <h3>Frequently Asked Questions</h3>
+              <div class="faq-item">
+                <h4>Who can join?</h4>
+                <p>Any SSPU student who wants to make a difference in the community is welcome to join.</p>
+                <h4>How do I become a volunteer?</h4>
+                <p>Attend an onboarding session and talk to a coordinator.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources" class="block" data-section="resources">
+        <div class="container">
+          <div class="block-header">
+            <h2>Resources</h2>
+            <p>Useful materials, media, and contacts.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="Resources subsections">
+            <button class="subtab selected" data-target="documents" role="tab" aria-selected="true">Documents</button>
+            <button class="subtab" data-target="gallery" role="tab" aria-selected="false">Gallery</button>
+            <button class="subtab" data-target="sponsors" role="tab" aria-selected="false">Sponsors</button>
+            <button class="subtab" data-target="contact" role="tab" aria-selected="false">Contact</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="documents" role="tabpanel">
+              <ul class="list">
+                <li><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="Club_Constitution.pdf" target="_blank" rel="noopener">Club Constitution (PDF)</a></li>
+                <li><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="#">Code of Conduct (PDF)</a></li>
+                <li><i class="fas fa-file-archive" aria-hidden="true"></i> <a href="#">Brand Assets (ZIP)</a></li>
+              </ul>
+            </article>
+            <article class="subsection" data-subsection="gallery" role="tabpanel">
+              <div class="gallery-container">
+                <div class="gallery-grid">
+                  <!-- District Trek -->
+                  <div class="gallery-folder" data-folder="event1">
+                    <div class="folder-header">
+                      <h3 class="folder-title">District Trek</h3>
+                      <span class="folder-count">3 photos</span>
+                    </div>
+                    <div class="folder-content">
+                      <div class="folder-item">
+                        <img src="assets/gallery/Dist Trek/trek1.jpg.jpg" alt="Trek Photo 1" loading="lazy">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/Dist Trek/trek2.jpg.jpg" alt="Trek Photo 2" loading="lazy">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/Dist Trek/trek3.jpg.jpg" alt="Trek Photo 3" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SAMYATI 3.0 -->
+                  <div class="gallery-folder" data-folder="samyati">
+                    <div class="folder-header">
+                      <h3 class="folder-title">SAMYATI 3.0</h3>
+                      <span class="folder-count">8 photos</span>
+                    </div>
+                    <div class="folder-content">
+                      <div class="folder-item">
+                        <img src="assets/gallery/SAMYATI/1.jpg.jpg" alt="SAMYATI Event 1" loading="lazy">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/SAMYATI/2.jpg" alt="SAMYATI Event 2" loading="lazy">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/SAMYATI/3.jpg" alt="SAMYATI Event 3" loading="lazy">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/SAMYATI/4.jpg" alt="SAMYATI Event 4" loading="lazy">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/SAMYATI/5.jpg" alt="SAMYATI Event 5" loading="lazy">
+                      </div>
+                      <div class="folder-item more">
+                        +3 more
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Community Service -->
+                  <div class="gallery-folder" data-folder="installation">
+                    <div class="folder-header">
+                      <h3 class="folder-title">Installation</h3>
+                      <span class="folder-count">3 photos</span>
+                    </div>
+                    <div class="folder-content">
+                      <div class="folder-item">
+                        <img src="assets/gallery/Installation/installation1.jpg" alt="Installation 1" loading="lazy" class="gallery-thumbnail">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/Installation/installation2.jpg" alt="Installation 2" loading="lazy" class="gallery-thumbnail">
+                      </div>
+                      <div class="folder-item">
+                        <img src="assets/gallery/Installation/installation3.jpg" alt="Installation 3" loading="lazy" class="gallery-thumbnail">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal for viewing all images in a folder -->
+              <div id="gallery-modal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 id="modal-title">Event Gallery</h2>
+                    <button class="close-modal" aria-label="Close">&times;</button>
+                  </div>
+                  <div class="modal-scroll-container">
+                    <div class="modal-grid" id="modal-grid">
+                      <!-- Images will be loaded here by JavaScript -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <script>
+              // Gallery data
+              const folderData = {
+                event1: {
+                  title: "District Trek",
+                  images: [
+                    { src: "assets/gallery/Dist%20Trek/trek1.jpg", alt: "Trek through the mountains" },
+                    { src: "assets/gallery/Dist%20Trek/trek2.jpg", alt: "Group photo during the trek" },
+                    { src: "assets/gallery/Dist%20Trek/trek3.jpg", alt: "Scenic view from the trek" }
+                  ]
+                },
+                samyati: {
+                  title: "SAMYATI 3.0",
+                  images: [
+                    { src: "assets/gallery/SAMYATI/1.jpg", alt: "SAMYATI event group photo" },
+                    { src: "assets/gallery/SAMYATI/2.jpg", alt: "SAMYATI event activity" },
+                    { src: "assets/gallery/SAMYATI/3.jpg", alt: "SAMYATI event stage" },
+                    { src: "assets/gallery/SAMYATI/4.jpg", alt: "SAMYATI participants" },
+                    { src: "assets/gallery/SAMYATI/5.jpg", alt: "SAMYATI performance" },
+                    { src: "assets/gallery/SAMYATI/6.jpg", alt: "SAMYATI group activity" },
+                    { src: "assets/gallery/SAMYATI/7.jpg", alt: "SAMYATI award ceremony" },
+                    { src: "assets/gallery/SAMYATI/8.jpg", alt: "SAMYATI closing ceremony" }
+                  ]
+                }
+              };
+
+              // Initialize gallery and other components when DOM is loaded
+              document.addEventListener('DOMContentLoaded', function() {
+                // Initialize tabs
+                const initTabs = () => {
+                  const tabPanes = document.querySelectorAll('.tab-pane');
+                  const tabButtons = document.querySelectorAll('.tab-button');
+                  
+                  tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                      const target = button.getAttribute('data-tab');
+                      
+                      // Update active tab button
+                      tabButtons.forEach(btn => btn.classList.remove('active'));
+                      button.classList.add('active');
+                      
+                      // Show target tab content
+                      tabPanes.forEach(pane => {
+                        if (pane.id === target) {
+                          pane.classList.add('active');
+                        } else {
+                          pane.classList.remove('active');
+                        }
+                      });
+                    });
+                  });
+                };
+                
+                // Initialize mobile menu
+                const initMobileMenu = () => {
+                  const menuButton = document.querySelector('.mobile-menu-button');
+                  const nav = document.querySelector('nav');
+                  
+                  if (menuButton && nav) {
+                    menuButton.addEventListener('click', () => {
+                      nav.classList.toggle('active');
+                      menuButton.setAttribute('aria-expanded', 
+                        menuButton.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                      );
+                    });
+                  }
+                };
+                
+                // Initialize smooth scrolling
+                const initSmoothScroll = () => {
+                  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                      e.preventDefault();
+                      const targetId = this.getAttribute('href');
+                      if (targetId === '#') return;
+                      
+                      const targetElement = document.querySelector(targetId);
+                      if (targetElement) {
+                        window.scrollTo({
+                          top: targetElement.offsetTop - 80,
+                          behavior: 'smooth'
+                        });
+                        
+                        // Update URL without page jump
+                        history.pushState(null, '', targetId);
+                      }
+                    });
+                  });
+                };
+
+                // Initialize gallery
+                const initGallery = () => {
+                  const galleryFolders = document.querySelectorAll('.gallery-folder');
+                  
+                  galleryFolders.forEach(folder => {
+                    const folderId = folder.dataset.folder;
+                    
+                    // Add click event to open modal
+                    folder.addEventListener('click', () => openFolderModal(folderId));
+                    
+                    // Add keyboard navigation
+                    folder.addEventListener('keydown', (e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openFolderModal(folderId);
+                      }
+                    });
+                    
+                    // Make folder items focusable
+                    folder.setAttribute('tabindex', '0');
+                    folder.setAttribute('role', 'button');
+                    folder.setAttribute('aria-label', `View ${folderId} gallery`);
+                  });
+                  
+                  // Close modal when clicking outside content
+                  document.addEventListener('click', (e) => {
+                    const modal = document.getElementById('gallery-modal');
+                    if (e.target === modal) {
+                      closeModal();
+                    }
+                  });
+
+                  // Close modal with Escape key
+                  document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                      closeModal();
+                    }
+                  });
+                };
+
+                // Open folder modal
+                window.openFolderModal = function(folderId) {
+                  const folder = folderData[folderId];
+                  if (!folder) return;
+                  
+                  const modal = document.getElementById('gallery-modal');
+                  const modalContent = modal.querySelector('.modal-content');
+                  const modalTitle = modal.querySelector('.modal-title');
+                  const modalGallery = modal.querySelector('.modal-gallery');
+                  
+                  // Set modal title
+                  modalTitle.textContent = folder.title;
+                  
+                  // Clear previous content
+                  modalGallery.innerHTML = '';
+                  
+                  // Add images to modal
+                  folder.images.forEach((image, index) => {
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.alt || `Image ${index + 1} of ${folder.title}`;
+                    img.loading = 'lazy';
+                    img.className = 'modal-image';
+                    img.tabIndex = 0;
+                    modalGallery.appendChild(img);
+                  });
+                  
+                  // Show modal
+                  modal.style.display = 'block';
+                  document.body.style.overflow = 'hidden';
+                  
+                  // Focus first image for keyboard navigation
+                  const firstImage = modalGallery.querySelector('img');
+                  if (firstImage) firstImage.focus();
+                };
+                
+                // Close modal
+                window.closeModal = function() {
+                  const modal = document.getElementById('gallery-modal');
+                  modal.style.display = 'none';
+                  document.body.style.overflow = 'auto';
+                };
+                
+                // Make modal accessible
+                document.addEventListener('keydown', (e) => {
+                  const modal = document.getElementById('gallery-modal');
+                  if (modal.style.display === 'block') {
+                    const focusable = modal.querySelectorAll('img, button, [tabindex]');
+                    const firstFocusable = focusable[0];
+                    const lastFocusable = focusable[focusable.length - 1];
+                    
+                    if (e.key === 'Tab') {
+                      if (e.shiftKey) {
+                        if (document.activeElement === firstFocusable) {
+                          e.preventDefault();
+                          lastFocusable.focus();
+                        }
+                      } else {
+                        if (document.activeElement === lastFocusable) {
+                          e.preventDefault();
+                          firstFocusable.focus();
+                        }
+                      }
+                    }
+                  }
+                });
+                
+                // Initialize all components
+                initTabs();
+                initMobileMenu();
+                initSmoothScroll();
+                initGallery();
+              });
+            </script>
+            <article class="subsection" data-subsection="sponsors" role="tabpanel">
+              <div class="grid logos">
+                <div class="logo"><i class="fas fa-building" aria-hidden="true"></i> Alpha Corp</div>
+                <div class="logo"><i class="fas fa-building" aria-hidden="true"></i> Beta Ltd</div>
+                <div class="logo"><i class="fas fa-building" aria-hidden="true"></i> Gamma Inc</div>
+              </div>
+            </article>
+            <article class="subsection" data-subsection="contact" role="tabpanel">
+              <div class="grid two">
+                <div>
+                  <h4><i class="fas fa-envelope" aria-hidden="true"></i> Email</h4>
+                  <p><a href="mailto:hello@racclub.org">hello@racclub.org</a></p>
+                  <h4><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location</h4>
+                  <p><a href="https://maps.app.goo.gl/8E1AXiyN6sGBj2nP8" target="_blank" rel="noopener">Symbiosis Skills and Professional University, Kiwale, Pune</a> <i class="fas fa-external-link-alt" aria-hidden="true"></i></p>
+                </div>
+                <div>
+                  <h4><i class="fas fa-share-alt" aria-hidden="true"></i> Follow</h4>
+                  <ul class="list">
+                    <li><a href="https://www.instagram.com/rac_sspu/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="https://linkedin.com/company/racsspu" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+                    <li><a href="https://youtube.com/@racsspu" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Member Login Modal -->
+    <div id="member-modal" class="modal">
+      <div class="modal-content">
+        <button type="button" class="close" aria-label="Close modal">&times;</button>
+        <div id="member-login-form">
+          <h2>Member Login</h2>
+          <form id="member-login" novalidate>
+            <label for="member-email"><i class="fas fa-envelope" aria-hidden="true"></i> Email</label>
+            <input type="email" id="member-email" name="member-email" required>
+            <label for="member-password"><i class="fas fa-lock" aria-hidden="true"></i> Password</label>
+            <input type="password" id="member-password" name="member-password" required>
+            <button type="submit" class="btn primary"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Login</button>
+          </form>
+          <p style="text-align: center; margin-top: 15px;">
+            Don't have an account? <a href="#" id="show-register" style="color: var(--primary);">Register here</a>
+          </p>
+        </div>
+        <div id="member-register-form" style="display: none;">
+          <h2>Member Registration</h2>
+          <form id="member-register" novalidate>
+            <label for="reg-name"><i class="fas fa-user" aria-hidden="true"></i> Full Name</label>
+            <input type="text" id="reg-name" name="reg-name" required>
+            <label for="reg-email"><i class="fas fa-envelope" aria-hidden="true"></i> Email</label>
+            <input type="email" id="reg-email" name="reg-email" required>
+            <label for="reg-password"><i class="fas fa-lock" aria-hidden="true"></i> Password</label>
+            <input type="password" id="reg-password" name="reg-password" required minlength="6">
+            <label for="reg-confirm"><i class="fas fa-lock" aria-hidden="true"></i> Confirm Password</label>
+            <input type="password" id="reg-confirm" name="reg-confirm" required minlength="6">
+            <label for="reg-interest"><i class="fas fa-lightbulb" aria-hidden="true"></i> Interest Area</label>
+            <select id="reg-interest" name="reg-interest">
+              <option value="Leadership">Leadership</option>
+              <option value="Events">Events</option>
+              <option value="Community">Community</option>
+              <option value="Operations">Operations</option>
+            </select>
+            <button type="submit" class="btn primary"><i class="fas fa-user-plus" aria-hidden="true"></i> Register</button>
+          </form>
+          <p style="text-align: center; margin-top: 15px;">
+            Already have an account? <a href="#" id="show-login" style="color: var(--primary);">Login here</a>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    // Main initialization when DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Initialize tab switching
+      function initTabs() {
+        document.querySelectorAll('.subtab').forEach(tab => {
+          tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const parentSection = this.closest('section');
+            
+            if (!targetId || !parentSection) return;
+            
+            // Update active tab
+            const parentTabs = parentSection.querySelectorAll('.subtab');
+            parentTabs.forEach(t => t.classList.remove('selected'));
+            this.classList.add('selected');
+            
+            // Update active content
+            const subsections = parentSection.querySelectorAll('.subsection');
+            subsections.forEach(sub => {
+              sub.classList.remove('active');
+              if (sub.getAttribute('data-subsection') === targetId) {
+                sub.classList.add('active');
+              }
+            });
+          });
+        });
+      }
+      
+      // 2. Initialize mobile menu
+      function initMobileMenu() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navList = document.querySelector('.nav-list');
+        
+        if (navToggle && navList) {
+          navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navList.style.display = isExpanded ? 'none' : 'flex';
+          });
+          
+          // Close menu when clicking outside
+          document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && !e.target.closest('.main-nav')) {
+              navToggle.setAttribute('aria-expanded', 'false');
+              navList.style.display = 'none';
+            }
+          });
+        }
+      }
+      
+      // 3. Initialize smooth scrolling
+      function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === '#!') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              // Close mobile menu if open
+              const navToggle = document.querySelector('.nav-toggle');
+              const navList = document.querySelector('.nav-list');
+              if (navToggle && navList && window.getComputedStyle(navList).display === 'flex') {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navList.style.display = 'none';
+              }
+              
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      }
+      
+      // 4. Gallery functionality
+      function initGallery() {
+        // Make folderData available globally
+        window.folderData = folderData;
+        
+        // Handle folder clicks
+        document.addEventListener('click', function(e) {
+          const folder = e.target.closest('.gallery-folder');
+          if (folder) {
+            e.preventDefault();
+            const folderId = folder.getAttribute('data-folder');
+            if (folderId && folderData[folderId]) {
+              openFolderModal(folderId);
+            }
+          }
+          
+          // Handle close button
+          if (e.target.closest('.close-modal')) {
+            e.preventDefault();
+            closeModal();
+          }
+          
+          // Close modal when clicking outside content
+          if (e.target.classList.contains('modal')) {
+            closeModal();
+          }
+        });
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            closeModal();
+          }
+        });
+      }
+      
+      // Modal functions
+      function openFolderModal(folderId) {
+        const folder = folderData[folderId];
+        if (!folder) return;
+        
+        const modal = document.getElementById('gallery-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalGrid = document.getElementById('modal-grid');
+        
+        if (!modal || !modalTitle || !modalGrid) return;
+        
+        modalTitle.textContent = folder.title;
+        modalGrid.innerHTML = folder.images.map(img => `
+          <div class="modal-item">
+            <img src="${img.src}" alt="${img.alt}" loading="lazy">
+          </div>
+        `).join('');
+        
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeModal() {
+        const modal = document.getElementById('gallery-modal');
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+      
+      // Initialize all components
+      initTabs();
+      initMobileMenu();
+      initSmoothScroll();
+      initGallery();
+      
+      // Show first tab content by default
+      document.querySelectorAll('.subnav[role="tablist"]').forEach(nav => {
+        const firstTab = nav.querySelector('.subtab');
+        if (firstTab) firstTab.click();
+      });
+    });
+    
+    // Gallery data (IIFE to avoid global scope pollution)
+    (function() {
+      const folderData = {
+        samyati: {
+          title: 'SAMYATI',
+          images: [
+            { src: 'assets/gallery/SAMYATI/1.jpg', alt: 'SAMYATI Event 1' },
+            { src: 'assets/gallery/SAMYATI/2.jpg', alt: 'SAMYATI Event 2' },
+            { src: 'assets/gallery/SAMYATI/3.jpg', alt: 'SAMYATI Event 3' },
+            { src: 'assets/gallery/SAMYATI/4.jpg', alt: 'SAMYATI Event 4' },
+            { src: 'assets/gallery/SAMYATI/5.jpg', alt: 'SAMYATI Event 5' },
+            { src: 'assets/gallery/SAMYATI/6.jpg', alt: 'SAMYATI Event 6' },
+            { src: 'assets/gallery/SAMYATI/7.jpg', alt: 'SAMYATI Event 7' },
+            { src: 'assets/gallery/SAMYATI/8.jpg', alt: 'SAMYATI Event 8' }
+          ]
+        },
+        installation: {
+          title: 'Installation',
+          images: [
+            { src: 'assets/gallery/Installation/installation1.jpg', alt: 'Installation 1' },
+            { src: 'assets/gallery/Installation/installation2.jpg', alt: 'Installation 2' },
+            { src: 'assets/gallery/Installation/installation3.jpg', alt: 'Installation 3' }
+          ]
+        }
+      };
+
+      // Make folderData available globally for gallery functionality
+      window.folderData = folderData;
+
+      // Initialize gallery if on gallery page
+      if (document.querySelector('.gallery-container')) {
+        initializeGallery();
+      }
+
+      function initializeGallery() {
+        const galleryContainer = document.querySelector('.gallery-container');
+        if (!galleryContainer) return;
+
+        // Render gallery folders
+        let galleryHTML = '';
+        for (const [folderId, folder] of Object.entries(folderData)) {
+          if (folder.images && folder.images.length > 0) {
+            galleryHTML += `
+              <div class="gallery-folder" onclick="openFolderModal('${folderId}')">
+                <div class="folder-icon">
+                  <i class="fas fa-folder" aria-hidden="true"></i>
+                </div>
+                <div class="folder-name">${folder.title}</div>
+                <div class="image-count">${folder.images.length} images</div>
+              </div>
+            `;
+          }
+        }
+        galleryContainer.innerHTML = galleryHTML;
+      }
+
+      // Modal functions
+      window.openFolderModal = function(folderId) {
+        const folder = folderData[folderId];
+        if (!folder) return;
+
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>${folder.title}</h2>
+            <div class="gallery-grid">
+              ${folder.images.map(img => `
+                <div class="gallery-item">
+                  <img src="${img.src}" alt="${img.alt}" loading="lazy">
+                  <div class="image-caption">${img.alt}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        document.body.appendChild(modal);
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closeModal = function() {
+        const modal = document.querySelector('.modal');
+        if (modal) {
+          document.body.removeChild(modal);
+          document.body.style.overflow = '';
+        }
+      };
+    // Close modal when clicking the close button
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.close-modal')) {
+        closeModal();
+      }
+    });
+    
+    // Remove loading class when page is fully loaded
+    window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+      const loadingScreen = document.getElementById('loading-screen');
+      if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+<!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+  // Initialize AOS with custom settings
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
+  });
+</script>
+<script>
+// Set current year in footer
+document.addEventListener('DOMContentLoaded', function() {
+  const yearElement = document.getElementById('year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+    // Mobile menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    
+    if (navToggle && navList) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navList.style.display = expanded ? 'none' : 'flex';
+      });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.main-nav') && window.innerWidth <= 768) {
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        if (navList) navList.style.display = 'none';
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        if (navList) navList.style.display = 'flex';
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      } else {
+        if (navList) navList.style.display = 'none';
+      }
+    });
+
+    // Form submission handling
+    const membershipForm = document.getElementById('membershipForm');
+    if (membershipForm) {
+      membershipForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(membershipForm);
+        const submitBtn = membershipForm.querySelector('button[type="submit"]');
+        const submitText = submitBtn?.querySelector('.btn-text');
+        const loadingText = submitBtn?.querySelector('.btn-loading');
+        const formMessage = document.getElementById('formMessage');
+        
+        try {
+          // Show loading state
+          submitBtn.disabled = true;
+          if (submitText) submitText.style.display = 'none';
+          if (loadingText) loadingText.style.display = 'inline';
+          
+          // Submit form data
+          const response = await fetch(membershipForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            if (formMessage) {
+              formMessage.textContent = 'Thank you for your application! We will get back to you soon.';
+              formMessage.className = 'form-message success';
+            }
+            membershipForm.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          if (formMessage) {
+            formMessage.textContent = 'There was an error submitting your application. Please try again later.';
+            formMessage.className = 'form-message error';
+          }
+        } finally {
+          // Reset button state
+          submitBtn.disabled = false;
+          if (submitText) submitText.style.display = 'inline';
+          if (loadingText) loadingText.style.display = 'none';
+          
+          // Scroll to message
+          if (formMessage) {
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      });
+    }
+  });
+</script>
+<script>
+  // Removed unnecessary script tag
+</script>
+</body>
+</html>

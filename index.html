@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotaract Club of SSPU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="theme-color" content="#b31217" />
+    <link rel="icon" href="logo.png" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <img src="logo.png" alt="RAC Symbiosis Skills and Professional University Logo" class="logo-img" width="80" height="80" />
+        <a href="#top" class="brand" aria-label="Rotaract Club of SSPU home" style="margin-left:1rem;">Rotaract Club of SSPU</a>
+        <nav class="main-nav" aria-label="Primary">
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+          <ul class="nav-list">
+            <li><a href="#about"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+            <li><a href="#events"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Events</a></li>
+            <li><a href="#membership"><i class="fas fa-users" aria-hidden="true"></i> Membership</a></li>
+            <li><a href="#resources"><i class="fas fa-book" aria-hidden="true"></i> Resources</a></li>
+            <li>
+              <button id="member-login-btn" class="btn" type="button" aria-label="Member Login">
+                <i class="fas fa-user" aria-hidden="true"></i> Member Login
+              </button>
+            </li>
+            <li>
+              <span id="member-display" style="display:none; color: var(--primary); font-weight: 600; padding: 8px 12px;">
+                <i class="fas fa-user" aria-hidden="true"></i> <span id="logged-member"></span>
+              </span>
+            </li>
+            <li>
+              <span id="username-display" style="display:none; color: var(--accent); font-weight: 600; padding: 8px 12px;">
+                <i class="fas fa-user-shield" aria-hidden="true"></i> <span id="logged-username"></span>
+              </span>
+            </li>
+            <li>
+              <button id="logout-btn" class="btn" type="button" style="display:none" aria-label="Logout">
+                <i class="fas fa-right-from-bracket" aria-hidden="true"></i> Logout
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <img src="logo.png" alt="Rotaract Club of SSPU Logo" class="hero-logo" width="220" height="220" />
+          <h1>Welcome to Rotaract Club of Symbiosis Skills & Professional University (SSPU)</h1>
+          <p>Connecting members through activities, growth and community impact.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#membership"><i class="fas fa-user-plus" aria-hidden="true"></i> Join Now</a>
+            <a class="btn" href="#events"><i class="fas fa-calendar" aria-hidden="true"></i> See Events</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="block" data-section="about">
+        <div class="container">
+          <div class="block-header">
+            <h2>About</h2>
+            <p>Learn what we stand for and who we are.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="About subsections">
+            <button class="subtab selected" data-target="mission" role="tab" aria-selected="true">Mission</button>
+            <button class="subtab" data-target="vision" role="tab" aria-selected="false">Vision</button>
+            <button class="subtab" data-target="history" role="tab" aria-selected="false">History</button>
+            <button class="subtab" data-target="leadership" role="tab" aria-selected="false">Leadership</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="mission" role="tabpanel">
+              <h3>Our Mission</h3>
+              <p>Our mission is to empower young individuals by providing opportunities for meaningful community service, leadership development and professional growth while fostering a spirit of inclusivity and international understanding. Through impactful initiatives, collaborative projects and cultural exchange, we aim to develop responsible leaders who contribute positively to society at both local and global levels.</p>
+            </article>
+            <article class="subsection" data-subsection="vision" role="tabpanel">
+              <h3>Our Vision</h3>
+              <p>Our Vision
+
+To nurture socially responsible leaders who lead with integrity, empathy, and purpose.
+
+To inspire positive change in communities through impactful service, innovation, and collaboration.
+
+To strengthen global connections by promoting cultural understanding, inclusion, and international fellowship.</p>
+            </article>
+            <article class="subsection" data-subsection="history" role="tabpanel">
+              <h3>Our History</h3>
+              <p>Founded in 2024, we began with a small team passionate about impact. Today we host activities across campus and beyond.</p>
+            </article>
+            <article class="subsection" data-subsection="leadership" role="tabpanel">
+              <h3>Leadership</h3>
+              <div class="grid cards">
+                <div class="card"><h4>President</h4><p>Leads strategy and operations.</p></div>
+                <div class="card"><h4>Secretary</h4><p>Coordinates communication.</p></div>
+                <div class="card"><h4>Treasurer</h4><p>Manages budget and finance.</p></div>
+                <div class="card"><h4>Joint Secretary</h4><p>Coordinates communication.</p></div>
+                <div class="card"><h4><i class="fas fa-hand-holding-heart"></i> Community Service Director</h4><p>Leads community outreach and service projects.</p></div>
+                <div class="card"><h4><i class="fas fa-users"></i> Club Service Director</h4><p>Strengthens Club engagement and member experience.</p></div>
+                <div class="card"><h4><i class="fas fa-globe"></i> International Service Director</h4><p>Drives global collaboration and cultural exchange.</p></div>
+                <div class="card"><h4><i class="fas fa-user-graduate"></i> Professional Development Director</h4><p>Builds skills through training and mentorship.</p></div>
+                <div class="card"><h4><i class="fas fa-handshake"></i> Rotary–Rotaract Relationship Officer</h4><p>Fosters partnership with Rotary and external networks.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="block" data-section="events">
+        <div class="container">
+          <div class="block-header">
+            <h2>Events</h2>
+            <p>Stay updated with our upcoming and past events</p>
+          </div>
+          
+          <!-- Event Tabs -->
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="upcoming">Upcoming Events</button>
+            <button class="tab-btn" data-tab="past">Past Events</button>
+          </div>
+          
+          <!-- Upcoming Events Tab -->
+          <div id="upcoming" class="tab-content active">
+            <div class="events-grid">
+              <div class="event-card">
+                <div class="event-date">
+                  <span class="day">15</span>
+                  <span class="month">DEC</span>
+                </div>
+                <div class="event-details">
+                  <h3><i class="fas fa-microphone"></i>Sparsh Clothes Donation</h3>
+                  <p class="event-time"><i class="far fa-clock"></i> 1st week of January</p>
+                  <p class="event-location"><i class="fas fa-map-marker-alt"></i>University</p>
+                  <p class="event-description">Join us for a cloth donation drive aimed at spreading warmth and care to the needy.</p>
+                  <div class="event-actions">
+                    <a href="#" class="btn primary"><i class="fas fa-ticket-alt"></i> Register Now</a>
+                    <button class="btn secondary add-to-calendar" data-title="SAMYATI 3.0" data-start="2025-12-15T18:00:00" data-end="2025-12-15T20:00:00" data-location="University Auditorium">
+                      <i class="far fa-calendar-plus"></i> Add to Calendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="event-card">
+                <div class="event-date">
+                  <span class="day">20</span>
+                  <span class="month">DEC</span>
+                </div>
+                <div class="event-details">
+                  <h3><i class="fas fa-users"></i> Community Service Day</h3>
+                  <p class="event-time"><i class="far fa-clock"></i> Saturday, 9:00 AM - 2:00 PM</p>
+                  <p class="event-location"><i class="fas fa-map-marker-alt"></i> Local Community Center</p>
+                  <p class="event-description">Give back to the community through various service activities. Lunch will be provided for all volunteers.</p>
+                  <div class="event-actions">
+                    <a href="#" class="btn primary"><i class="fas fa-hands-helping"></i> Volunteer</a>
+                    <button class="btn secondary add-to-calendar" data-title="Community Service Day" data-start="2025-12-20T09:00:00" data-end="2025-12-20T14:00:00" data-location="Local Community Center">
+                      <i class="far fa-calendar-plus"></i> Add to Calendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Past Events Tab -->
+          <div id="past" class="tab-content">
+            <div class="events-grid">
+              <div class="event-card past">
+                <div class="event-date past">
+                  <span class="day">10</span>
+                  <span class="month">NOV</span>
+                </div>
+                <div class="event-details">
+                  <h3><i class="fas fa-star"></i>Samyati 3.0</h3>
+                  <p class="event-time"><i class="far fa-calendar-check"></i> August 29-31 2025 </p>
+                  <p class="event-location"><i class="fas fa-map-marker-alt"></i>Pune</p>
+                  <p class="event-description">Samyati brought together participants from different districts and countries to collaborate, connect and create collective impact.</p>
+                  <div class="event-actions">
+                    <a href="#" class="btn secondary"><i class="fas fa-images"></i> View Gallery</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="event-card past">
+                <div class="event-date past">
+                  <span class="day">25</span>
+                  <span class="month">OCT</span>
+                </div>
+                <div class="event-details">
+                  <h3><i class="fas fa-chess-king"></i> Leadership Summit</h3>
+                  <p class="event-time"><i class="far fa-calendar-check"></i> October 25, 2024</p>
+                  <p class="event-location"><i class="fas fa-map-marker-alt"></i> Business School Auditorium</p>
+                  <p class="event-description">A day of leadership development workshops and networking with industry leaders.</p>
+                  <div class="event-actions">
+                    <a href="#" class="btn secondary"><i class="fas fa-images"></i> View Gallery</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="event-card past">
+                <div class="event-date past">
+                  <span class="day">12</span>
+                  <span class="month">OCT</span>
+                </div>
+                <div class="event-details">
+                  <h3><i class="fas fa-running"></i> Charity Run 2024</h3>
+                  <p class="event-time"><i class="far fa-calendar-check"></i> October 12, 2024</p>
+                  <p class="event-location"><i class="fas fa-map-marker-alt"></i> University Sports Complex</p>
+                  <p class="event-description">5K charity run to raise funds for local education initiatives. Over 200 participants joined us in this noble cause.</p>
+                  <div class="event-actions">
+                    <a href="#" class="btn secondary"><i class="fas fa-images"></i> View Gallery</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="leadership" class="block" data-section="leadership">
+        <div class="container">
+          <div class="block-header">
+            <h2>Our Leadership</h2>
+            <p>Meet the dedicated team leading our club to success</p>
+          </div>
+          
+          <!-- Leadership Tabs -->
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="board">CORE</button>
+            <button class="tab-btn" data-tab="committee">BODS</button>
+          </div>
+          
+          <!-- Board of Directors -->
+          <div id="board" class="tab-content active">
+            <div class="leadership-grid">
+              <!-- President -->
+              <div class="leader-card president" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/President.jpg" alt="President" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Anurag Dange</h3>
+                  <p class="leader-role">President</p>
+                  <p class="leader-bio">Leading the club with vision and dedication, Anurag ensures all initiatives align with our mission.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.anuragdange@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/anurag-dange-a19580273?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BdAOyT3YGQF2pVkcBmbMYGQ%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+
+              <!-- Secretary -->
+              <div class="leader-card secretary" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/secretary.jpg" alt="Secretary" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Shruti Dargude</h3>
+                  <p class="leader-role">Secretary</p>
+                  <p class="leader-bio">Ensuring smooth club operations through organized communication and record-keeping.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.shrutidargude@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/shruti-dargude-7b318a321?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FzY6xw3bSoKCF6abBkELsA%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Treasurer -->
+              <div class="leader-card treasurer" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/treasurer.jpg" alt="Treasurer" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Mujjamil Hajju</h3>
+                  <p class="leader-role">Treasurer</p>
+                  <p class="leader-bio">Overseeing the club's financial health and ensuring responsible budgeting for all activities and events.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.mujjamilhajju@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mujjamil-hajju-23975331b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BeFzYNpt6T3ONKyalqmhbUw%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Joint Secretary -->
+              <div class="leader-card joint-secretary" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/joint secretary.jpg" alt="Joint Secretary" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Disha Gorr</h3>
+                  <p class="leader-role">Joint Secretary</p>
+                  <p class="leader-bio">Supporting the Secretary in administrative duties and ensuring smooth club operations and communications.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.dishagor@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/disha-gor-0ba249321?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5hyFADk4TIyriZ0JeLJx2Q%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Committee Heads -->
+          <div id="committee" class="tab-content">
+            <div class="leadership-grid">
+              <!-- IPS,Club Advisor & WRWC-->
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/WRWC.jpg" alt="CMD" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Sanjivani Patil </h3>
+                  <p class="leader-role">IPS,Club Advisor & WRWC</p>
+                  <p class="leader-bio">Leading community service initiatives and volunteer activities.</p>
+                  <div class="leader-social">
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/sanjivani-patil-917b9426a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHA1DWUpHQYqE1uYbQTufvg%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!--Finance Director-->
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/finance director.jpg" alt="Rtr. Ishita Shelar - Professional Development Director" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Chaitanya Rohit</h3>
+                  <p class="leader-role">Finance Director</p>
+                  <p class="leader-bio">Leads workshops and mentorship programs to elevate members' professional skills and career readiness.</p>
+                  <div class="leader-social">
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/chaitanya-rohit-a2b39a295?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9UkceciTT3CNP6AFd2GHUA%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!--  -->
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/Sargeant.jpg" alt="Finance Director" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Sairaj Phakatkar</h3>
+                  <p class="leader-role">Sergeant At Arms</p>
+                  <p class="leader-bio">Oversees budgets, funds allocation and financial reporting for club activities.</p>
+                  <div class="leader-social">
+                    <a href="https://www.linkedin.com/in/sairaj-phakatkar-1b4173295?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHv0pezlbRtKTMlwsCxg38Q%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:rtr.sairajphakatkar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/Ishita .jpeg" alt="RRO" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Ishita Shelar</h3>
+                  <p class="leader-role">Professional Development Director</p>
+                  <p class="leader-bio">Coordinates outreach programs and manages external partnerships to grow our impact.</p>
+                  <div class="leader-social">
+                    <a href="https://www.linkedin.com/in/ishita-shelar-a16a47286?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bfh%2FuxSfMQxScCZ%2BbCv7%2FEQ%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:Rtr.ishitashelar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/CSD.jpeg" alt="IS Director" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Saee Dasare </h3>
+                  <p class="leader-role">Club Service Director</p>
+                  <p class="leader-bio">Leads tech initiatives, website maintenance and digital member engagement.</p>
+                  <div class="leader-social">
+                    <a href="https://www.linkedin.com/in/saidasare0605?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BgRoWMbHlRoKgfnMzJ%2Fxcrg%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:rtr.saidasare@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/" alt="CSD" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Avishkar Lonkar  </h3>
+                  <p class="leader-role">Club Service Director</p>
+                  <p class="leader-bio">Leads tech initiatives, website maintenance and digital member engagement.</p>
+                  <div class="leader-social">
+                    <a href="https://www.linkedin.com/in/avishkar-lonkar-b09273356?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYiyqfjJLQxSAa3MqmnHW6g%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+                  
+              <!-- International Service Director -->
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/ISD.jpg" alt="International Service Director" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Vinayak Kalshetti</h3>
+                  <p class="leader-role">International Service Director & DEI Officer</p>
+                  <p class="leader-bio">Oversees international service projects and promotes diversity,equity and inclusion initiatives within the club.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.vinayakkalshetti@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/vinayak-kalshetti-1272952a9?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Ba9ZRsQAoQguWbl%2BIiHS8yg%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/Vaishnavi.JPG" alt="Member 1 - Position" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Vaishnavi Kedari </h3>
+                  <p class="leader-role">Community Service Director</p>
+                  <p class="leader-bio">Brief description of their role and responsibilities.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.vaishnavikedari@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/vaishnavi-kedari-3294a2322?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3ByFvA38olQCOvYr2IrHkicg%3D%3D" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/CMD.jpg" alt="Member 1 - Position" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Jaspreet Kaur</h3>
+                  <p class="leader-role">Community Service Director</p>
+                  <p class="leader-bio">Brief description of their role and responsibilities.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.jaspreetsokhi@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/jaspreetkaur-sokhi-a1998a313?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BPpaoqvdKSWeBQ2gbbb8ZHg%3D%3D" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- New Leadership Card 1 -->
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/RRO.jpg" alt="Member 1 - Position" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Tanvi Khairnar</h3>
+                  <p class="leader-role">Rotary Rotaract Relationship Officer</p>
+                  <p class="leader-bio">Brief description of their role and responsibilities.</p>
+                  <div class="leader-social">
+                    <a href="mailto:rtr.tanvikhairnar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/tanvi-khairnar-673826326?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4ekenxAFRN66I5spvvWXCQ%3D%3D" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- New Leadership Card 2 -->
+              <div class="leader-card" tabindex="0">
+                <div class="leader-photo">
+                  <img src="assets/leadership/PRO.jpg" alt="Member 2 - Position" loading="lazy">
+                </div>
+                <div class="leader-details">
+                  <h3>Rtr. Nivyal Yadav  </h3>
+                  <p class="leader-role">Public Relation Officer</p>
+                  <p class="leader-bio">Brief description of their role and responsibilities.</p>
+                  <div class="leader-social">
+                    <a href="mailto:" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/nivyal-yadav-208137325?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BP%2BN1loEORHa7U6KvztCm5g%3D%3D" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+      <!-- Leader detail modal -->
+      <div id="leader-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content" role="document">
+          <button class="modal-close close" aria-label="Close" data-close>&times;</button>
+          <div class="modal-grid">
+            <div class="modal-photo">
+              <img src="" alt="" loading="lazy">
+            </div>
+            <div class="modal-body">
+              <h3 class="modal-name">Name</h3>
+              <p class="modal-role">Role</p>
+              <p class="modal-bio">Full biography and responsibilities will appear here.</p>
+              <div class="modal-social"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="membership" class="block" data-section="membership">
+        <div class="container">
+          <div class="block-header">
+            <h2>Membership</h2>
+            <p>Everything you need to join and get involved.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="Membership subsections">
+            <button class="subtab selected" data-target="join" role="tab" aria-selected="true">Join Us</button>
+            <button class="subtab" data-target="benefits" role="tab" aria-selected="false">Benefits</button>
+            <button class="subtab" data-target="faq" role="tab" aria-selected="false">FAQ</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="join" role="tabpanel">
+              <form id="membership-form" class="form" action="https://formspree.io/f/xnneozwy" method="POST">
+                <div id="form-message" class="form-message" style="display: none;"></div>
+                
+                <div class="form-row">
+                  <label for="first-name"><i class="fas fa-user" aria-hidden="true"></i> First Name</label>
+                  <input id="first-name" name="first_name" type="text" placeholder="Your first name" required />
+                </div>
+                
+                <div class="form-row">
+                  <label for="prn"><i class="fas fa-id-card" aria-hidden="true"></i> College PRN</label>
+                  <input id="prn" name="college_prn" type="text" placeholder="Enter your college PRN" required />
+                </div>
+                
+                <div class="form-row">
+                  <label for="department"><i class="fas fa-building" aria-hidden="true"></i> Department</label>
+                  <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CSIT">CSIT</option>
+                    <option value="AIML">AIML</option>
+                    <option value="Smart Sustainable">Smart Sustainable</option>
+                    <option value="Mechatronics">Mechatronics</option>
+                    <option value="BBA">BBA</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-row">
+                  <label for="mobile"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile Number</label>
+                  <input id="mobile" name="mobile_number" type="tel" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required />
+                </div>
+                
+                <div class="form-row">
+                  <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email ID</label>
+                  <input id="email" name="email" type="email" placeholder="your.email@example.com" required />
+                </div>
+                
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Application
+                  </button>
+                </div>
+                
+                <p class="form-note">We'll get back to you within 2-3 working days.</p>
+              </form>
+            </article>
+            <article class="subsection" data-subsection="benefits" role="tabpanel">
+              <ul class="list checks">
+                <li><i class="fas fa-user-graduate" aria-hidden="true"></i> Professional development and mentorship</li>
+                <li><i class="fas fa-calendar-check" aria-hidden="true"></i> Priority access to events and resources</li>
+                <li><i class="fas fa-crown" aria-hidden="true"></i> Leadership opportunities</li>
+                <li><i class="fas fa-hands-helping" aria-hidden="true"></i> Community service hours</li>
+              </ul>
+            </article>
+            <article class="subsection" data-subsection="faq" role="tabpanel">
+              <details>
+                <summary><i class="fas fa-question-circle" aria-hidden="true"></i> Who can join?</summary>
+                <p>Students of Symbiosis Skills & Professional University who are passionate about service, leadership, and personal growth.
+
+Individuals aged 18 years and above with an interest in community service, professional development, and social impact.
+
+Students from all departments and backgrounds — no prior experience required.
+
+Anyone willing to contribute time, ideas, and energy towards meaningful projects and teamwork.
+
+No experience needed — just the passion to serve, lead, and grow.</p>
+              </details>
+              <details>
+                <summary><i class="fas fa-clock" aria-hidden="true"></i> When do we meet?</summary>
+                <p>Weekly during the semester; see the events calendar.</p>
+              </details>
+              <details>
+                <summary><i class="fas fa-hands-helping" aria-hidden="true"></i> How do I become a volunteer?</summary>
+                <p>Attend an onboarding session and talk to a coordinator.</p>
+              </details>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources" class="block" data-section="resources">
+        <div class="container">
+          <div class="block-header">
+            <h2>Resources</h2>
+            <p>Useful materials, media, and contacts.</p>
+          </div>
+          <div class="subnav" role="tablist" aria-label="Resources subsections">
+            <button class="subtab selected" data-target="documents" role="tab" aria-selected="true">Documents</button>
+            <button class="subtab" data-target="gallery" role="tab" aria-selected="false">Gallery</button>
+            <button class="subtab" data-target="contact" role="tab" aria-selected="false">Contact</button>
+          </div>
+          <div class="subsections">
+            <article class="subsection active" data-subsection="documents" role="tabpanel">
+              <ul class="list">
+                <li><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="Club_Constitution.pdf" target="_blank" rel="noopener">Club Constitution (PDF)</a></li>
+                <li><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="#">Code of Conduct (PDF)</a></li>
+                <li><i class="fas fa-file-archive" aria-hidden="true"></i> <a href="#">Brand Assets (ZIP)</a></li>
+              </ul>
+            </article>
+            <article class="subsection" data-subsection="gallery" role="tabpanel">
+              <div class="gallery-container">
+                <!-- Sample Gallery Card 1 -->
+                <div class="gallery-card">
+                  <div class="gallery-card-header">
+                    <i class="fas fa-folder"></i>
+                    <h3>DISTRICT TREK</h3>
+                  </div>
+                  <div class="gallery-card-images">
+                    <div class="gallery-image active">
+                      <img src="assets/gallery/Dist%20Trek/trek1.jpg.jpg" alt="DISTRICT TREK Event 1">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/Dist%20Trek/trek2.jpg.jpg" alt="DISTRICT TREK Event 2">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/Dist%20Trek/trek3.jpg.jpg" alt="DISTRICT TREK Event 3">
+                    </div>
+                  </div>
+                  <div class="gallery-card-footer">
+                    <span class="image-count">3 Images</span>
+                    <div class="gallery-nav">
+                      <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                      <span class="image-counter">1/3</span>
+                      <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sample Gallery Card 2 -->
+                <div class="gallery-card">
+                  <div class="gallery-card-header">
+                    <i class="fas fa-folder"></i>
+                    <h3>INSTALLATION</h3>
+                  </div>
+                  <div class="gallery-card-images">
+                    <div class="gallery-image active">
+                      <img src="assets/gallery/Installation/installation1.jpg" alt="INSTALLATION Event 1">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/Installation/installation2.jpg" alt="INSTALLATION Event 2">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/Installation/installation3.jpg" alt="INSTALLATION Event 3">
+                    </div>
+                  </div>
+                  <div class="gallery-card-footer">
+                    <span class="image-count">3 Images</span>
+                    <div class="gallery-nav">
+                      <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                      <span class="image-counter">1/3</span>
+                      <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                  <!-- Sample Gallery Card 2 -->
+                <div class="gallery-card">
+                  <div class="gallery-card-header">
+                    <i class="fas fa-folder"></i>
+                    <h3>Sanjeevani</h3>
+                  </div>
+                  <div class="gallery-card-images">
+                    <div class="gallery-image active">
+                      <img src="assets/gallery/Sanjeevani/WhatsApp Image 2025-12-25 at 10.29.38 PM.jpeg" alt="Sanjeevani Event 1">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery" alt="Sanjeevani Event 2">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery" alt="Sanjeevani Event 3">
+                    </div>
+                  </div>
+                  <div class="gallery-card-footer">
+                    <span class="image-count">3 Images</span>
+                    <div class="gallery-nav">
+                      <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                      <span class="image-counter">1/3</span>
+                      <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sample Gallery Card 3 -->
+                <div class="gallery-card">
+                  <div class="gallery-card-header">
+                    <i class="fas fa-folder"></i>
+                    <h3>SAMYATI</h3>
+                  </div>
+                  <div class="gallery-card-images">
+                    <div class="gallery-image active">
+                      <img src="assets/gallery/SAMYATI/1.jpg.jpg" alt="SAMYATI Event 1">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/2.jpg" alt="SAMYATI Event 2">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/3.jpg" alt="SAMYATI Event 3">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/4.jpg" alt="SAMYATI Event 4">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/5.jpg" alt="SAMYATI Event 5">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/6.jpg" alt="SAMYATI Event 6">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/7.jpg" alt="SAMYATI Event 7">
+                    </div>
+                    <div class="gallery-image">
+                      <img src="assets/gallery/SAMYATI/8.jpg" alt="SAMYATI Event 8">
+                    </div>
+                  </div>
+                  <div class="gallery-card-footer">
+                    <span class="image-count">8 Images</span>
+                    <div class="gallery-nav">
+                      <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                      <span class="image-counter">1/8</span>
+                      <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="subsection" data-subsection="contact" role="tabpanel">
+              <div class="grid two">
+                <div>
+                  <h4><i class="fas fa-envelope" aria-hidden="true"></i> Email</h4>
+                  <p><a href="mailto:rotaractsspu@gmail.com">rotaractsspu@gmail.com</a></p>
+                  <h4><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location</h4>
+                  <p><a href="https://maps.app.goo.gl/8E1AXiyN6sGBj2nP8" target="_blank" rel="noopener">Symbiosis Skills and Professional University, Kiwale, Pune</a> <i class="fas fa-external-link-alt" aria-hidden="true"></i></p>
+                </div>
+                <div>
+                  <h4><i class="fas fa-share-alt" aria-hidden="true"></i> Follow</h4>
+                  <ul class="list">
+                    <li><a href="https://www.instagram.com/rac_sspu/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="https://linkedin.com/company/racsspu" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+                    <li><a href="https://youtube.com/@racsspu" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Member Login Modal -->
+    <div id="member-modal" class="modal">
+      <div class="modal-content">
+        <button type="button" class="close" aria-label="Close modal">&times;</button>
+        <div id="member-login-form">
+          <h2>Member Login</h2>
+          <form id="member-login" novalidate>
+            <label for="member-email"><i class="fas fa-envelope" aria-hidden="true"></i> Email</label>
+            <input type="email" id="member-email" name="member-email" required>
+            <label for="member-password"><i class="fas fa-lock" aria-hidden="true"></i> Password</label>
+            <input type="password" id="member-password" name="member-password" required>
+            <button type="submit" class="btn primary"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Login</button>
+          </form>
+          <p style="text-align: center; margin-top: 15px;">
+            Don't have an account? <a href="#" id="show-register" style="color: var(--primary);">Register here</a>
+          </p>
+        </div>
+        <div id="member-register-form" style="display: none;">
+          <h2>Member Registration</h2>
+          <form id="member-register" novalidate>
+            <label for="reg-name"><i class="fas fa-user" aria-hidden="true"></i> Full Name</label>
+            <input type="text" id="reg-name" name="reg-name" required>
+            <label for="reg-email"><i class="fas fa-envelope" aria-hidden="true"></i> Email</label>
+            <input type="email" id="reg-email" name="reg-email" required>
+            <label for="reg-password"><i class="fas fa-lock" aria-hidden="true"></i> Password</label>
+            <input type="password" id="reg-password" name="reg-password" required minlength="6">
+            <label for="reg-confirm"><i class="fas fa-lock" aria-hidden="true"></i> Confirm Password</label>
+            <input type="password" id="reg-confirm" name="reg-confirm" required minlength="6">
+            <label for="reg-interest"><i class="fas fa-lightbulb" aria-hidden="true"></i> Interest Area</label>
+            <select id="reg-interest" name="reg-interest">
+              <option value="Leadership">Leadership</option>
+              <option value="Events">Events</option>
+              <option value="Community">Community</option>
+              <option value="Operations">Operations</option>
+            </select>
+            <button type="submit" class="btn primary"><i class="fas fa-user-plus" aria-hidden="true"></i> Register</button>
+          </form>
+          <p style="text-align: center; margin-top: 15px;">
+            Already have an account? <a href="#" id="show-login" style="color: var(--primary);">Login here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Rotaract Club of SSPU. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rac_sspu/" target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/rac-sspu-0a4697362?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bu6CuZUe6SRmuVvMaa%2F7L%2Fw%3D%3D" target="_blank" rel="noopener" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <a class="btn small" href="#top" aria-label="Back to top of page">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Image Zoom Modal -->
+    <div id="imageZoomModal" class="image-modal">
+      <img src="" alt="Zoomed Image">
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/membership.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/image-zoom.js"></script>
+  </body>
+</html>

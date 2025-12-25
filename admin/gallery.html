@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Admin - Rotaract Club of SSPU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Admin specific styles */
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .admin-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .admin-panel {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+        
+        .upload-section, .gallery-section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-elev);
+            color: var(--text);
+            font-size: 1rem;
+        }
+        
+        .preview-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .preview-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+        }
+        
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .remove-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: rgba(255, 71, 87, 0.9);
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .gallery-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .gallery-item {
+            background: var(--bg-elev);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-4px);
+        }
+        
+        .gallery-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .gallery-info {
+            padding: 1rem;
+        }
+        
+        .gallery-info h4 {
+            margin: 0 0 0.5rem;
+            color: var(--text);
+        }
+        
+        .gallery-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-700);
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .file-label {
+            display: block;
+            padding: 1.5rem;
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .file-label:hover {
+            border-color: var(--primary);
+            background: rgba(108, 140, 255, 0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .admin-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Gallery Management</h1>
+            <p>Add and manage event galleries</p>
+        </div>
+        
+        <div class="admin-panel">
+            <div class="upload-section">
+                <h2>Add New Gallery</h2>
+                <form id="galleryForm">
+                    <div class="form-group">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" id="eventName" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Upload Images</label>
+                        <input type="file" id="imageUpload" class="file-input" multiple accept="image/*">
+                        <label for="imageUpload" class="file-label">
+                            <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary);"></i>
+                            <p>Click to upload images or drag and drop</p>
+                            <small class="text-muted">Supports JPG, PNG up to 5MB</small>
+                        </label>
+                        
+                        <div id="imagePreviews" class="preview-container">
+                            <!-- Image previews will appear here -->
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Create Gallery
+                    </button>
+                </form>
+            </div>
+            
+            <div class="gallery-section">
+                <h2>Your Galleries</h2>
+                <div class="gallery-list" id="galleryList">
+                    <!-- Galleries will be listed here -->
+                    <div class="gallery-empty">
+                        <p>No galleries yet. Create your first gallery!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Image preview functionality
+        const imageUpload = document.getElementById('imageUpload');
+        const imagePreviews = document.getElementById('imagePreviews');
+        const galleryForm = document.getElementById('galleryForm');
+        const galleryList = document.getElementById('galleryList');
+        
+        // Store uploaded files
+        let uploadedFiles = [];
+        
+        // Handle file selection
+        imageUpload.addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            
+            // Clear previous previews
+            imagePreviews.innerHTML = '';
+            uploadedFiles = [];
+            
+            // Process each file
+            files.forEach((file, index) => {
+                if (!file.type.startsWith('image/')) {
+                    alert(`File ${file.name} is not an image.`);
+                    return;
+                }
+                
+                // Add to uploaded files
+                uploadedFiles.push(file);
+                
+                // Create preview
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    
+                    previewItem.innerHTML = `
+                        <img src="${e.target.result}" alt="${file.name}">
+                        <button class="remove-btn" data-index="${index}">&times;</button>
+                    `;
+                    
+                    imagePreviews.appendChild(previewItem);
+                    
+                    // Add remove button functionality
+                    const removeBtn = previewItem.querySelector('.remove-btn');
+                    removeBtn.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        removeImage(index);
+                    });
+                };
+                
+                reader.readAsDataURL(file);
+            });
+        });
+        
+        // Remove image from preview and uploaded files
+        function removeImage(index) {
+            uploadedFiles.splice(index, 1);
+            renderPreviews();
+        }
+        
+        // Re-render previews
+        function renderPreviews() {
+            imagePreviews.innerHTML = '';
+            
+            if (uploadedFiles.length === 0) {
+                return;
+            }
+            
+            uploadedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    previewItem.innerHTML = `
+                        <img src="${e.target.result}" alt="${file.name}">
+                        <button class="remove-btn" data-index="${index}">&times;</button>
+                    `;
+                    
+                    imagePreviews.appendChild(previewItem);
+                    
+                    // Re-add event listener for remove button
+                    const removeBtn = previewItem.querySelector('.remove-btn');
+                    removeBtn.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        removeImage(index);
+                    });
+                };
+                
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        // Handle form submission
+        galleryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const eventName = document.getElementById('eventName').value.trim();
+            const eventDate = document.getElementById('eventDate').value;
+            
+            if (!eventName || !eventDate) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (uploadedFiles.length === 0) {
+                alert('Please upload at least one image.');
+                return;
+            }
+            
+            // Here you would typically upload the files to your server
+            // For this example, we'll just simulate a successful upload
+            simulateUpload(eventName, eventDate);
+        });
+        
+        // Simulate file upload (replace with actual upload logic)
+        function simulateUpload(eventName, eventDate) {
+            // Show loading state
+            const submitBtn = galleryForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Create gallery item
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `
+                    <img src="${URL.createObjectURL(uploadedFiles[0])}" alt="${eventName}" class="gallery-thumbnail">
+                    <div class="gallery-info">
+                        <h4>${eventName}</h4>
+                        <div class="gallery-meta">
+                            <span>${formatDate(eventDate)}</span>
+                            <span>${uploadedFiles.length} images</span>
+                        </div>
+                    </div>
+                `;
+                
+                // Add to gallery list
+                if (galleryList.querySelector('.gallery-empty')) {
+                    galleryList.innerHTML = '';
+                }
+                
+                galleryList.prepend(galleryItem);
+                
+                // Reset form
+                galleryForm.reset();
+                imagePreviews.innerHTML = '';
+                uploadedFiles = [];
+                
+                // Show success message
+                alert('Gallery created successfully!');
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                
+            }, 1500);
+        }
+        
+        // Format date as DD/MM/YYYY
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-GB'); // UK format (DD/MM/YYYY)
+        }
+        
+        // Initialize date picker with today's date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('eventDate').value = today;
+        });
+    </script>
+</body>
+</html>
