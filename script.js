@@ -62,12 +62,50 @@ function initTabs() {
   }
 }
 
+// Initialize flip card interactions
+function initFlipCards() {
+  const cards = document.querySelectorAll('.flip-card');
+  cards.forEach(card => {
+    const front = card.querySelector('.card-front');
+    const back = card.querySelector('.card-back');
+
+    function setFlipped(flipped) {
+      card.classList.toggle('is-flipped', !!flipped);
+      card.setAttribute('aria-pressed', String(!!flipped));
+      if (front) front.setAttribute('aria-hidden', !!flipped ? 'true' : 'false');
+      if (back) back.setAttribute('aria-hidden', !!flipped ? 'false' : 'true');
+    }
+
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return; // don't intercept interactive elements
+      setFlipped(!card.classList.contains('is-flipped'));
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setFlipped(!card.classList.contains('is-flipped'));
+      } else if (e.key === 'Escape' && card.classList.contains('is-flipped')) {
+        setFlipped(false);
+        card.focus();
+      }
+    });
+
+    // Initial aria-hidden states
+    if (front) front.setAttribute('aria-hidden', 'false');
+    if (back) back.setAttribute('aria-hidden', 'true');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize ripple effect
   addRippleEffect();
   
   // Initialize tabs
   initTabs();
+
+  // Initialize flip cards
+  if (typeof initFlipCards === 'function') initFlipCards();
   
   // Footer year
   const yearEl = document.getElementById('year');
@@ -766,4 +804,49 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     }
   });
+
+  // --- Founder card effects & modal ---
+  const inViewTargets = document.querySelectorAll('.founder-card, .profile-card');
+  if (inViewTargets.length) {
+    try {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.18 });
+      inViewTargets.forEach(el => obs.observe(el));
+    } catch (err) { inViewTargets.forEach(el => el.classList.add('in-view')); }
+  }
+
+  // Founder modal open/close
+  const founderModal = document.getElementById('founder-modal');
+  const founderModalText = founderModal?.querySelector('.founder-modal-text');
+  const founderModalClose = founderModal?.querySelector('[data-close]');
+
+  function openFounderModal() {
+    if (!founderModal || !founderModalText) return;
+    // copy text from page
+    const body = document.querySelector('.founder-body');
+    founderModalText.innerHTML = body ? body.innerHTML : '<p>Founder story not available.</p>';
+    founderModal.classList.add('show');
+    founderModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // focus trap - move focus to close
+    const closeBtn = founderModal.querySelector('[data-close]'); if (closeBtn) closeBtn.focus();
+    document.addEventListener('keydown', handleFounderEscape);
+  }
+
+  function closeFounderModal() {
+    if (!founderModal) return;
+    founderModal.classList.remove('show');
+    founderModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleFounderEscape);
+  }
+
+  function handleFounderEscape(e) { if (e.key === 'Escape') closeFounderModal(); }
+
+  document.querySelectorAll('.open-founder-story').forEach((btn) => btn.addEventListener('click', (e) => { e.preventDefault(); openFounderModal(); }));
+  founderModal?.addEventListener('click', (e) => { if (e.target === founderModal || e.target.closest('[data-close]')) closeFounderModal(); });
+
 }); 
